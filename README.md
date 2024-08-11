@@ -1,1 +1,1 @@
-# NLPbasics
+# Implementation of Natural Language Processing basic tasks
