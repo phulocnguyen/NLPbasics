@@ -8,8 +8,6 @@ from Block.TransformerEmbedding import *
 class EncoderBlock(nn.Module):
     def __init__(self, d_model, num_heads, dropout_probs, hidden):
         super(EncoderBlock, self).__init__()
-        self.d_k = d_model // num_heads
-        self.d_v = d_model // num_heads
         self.attention = MultiheadAttention(num_heads=num_heads, d_model=d_model)
         self.ffn = PositionwiseFeedForward(d_model=d_model, hidden=hidden, drop_prob=dropout_probs)
         self.layer_norm = LayerNorm(d_model=d_model, eps=1e-12)
