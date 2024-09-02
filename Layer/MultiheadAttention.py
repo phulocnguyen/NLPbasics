@@ -45,27 +45,25 @@ class MultiheadAttention(nn.Module):
 
         return output
     
-    # Sample input dimensions
-batch_size = 4  # Number of samples in the batch
-seq_len = 5     # Sequence length (number of tokens in each sample)
-d_model = 512     # Dimensionality of the model (input features)
-d_k = 64
-d_v = 64     
-num_heads = 8   # Number of attention heads
+#     # Sample input dimensions
+# batch_size = 4  # Number of samples in the batch
+# seq_len = 5     # Sequence length (number of tokens in each sample)
+# d_model = 512     # Dimensionality of the model (input features)
+# num_heads = 8   # Number of attention heads
 
-# Create random input tensors for query (q), key (k), and value (v)
-q = torch.rand(batch_size, seq_len, d_model)  # (batch_size, seq_len_q, d_model)
-k = torch.rand(batch_size, seq_len, d_model)  # (batch_size, seq_len_k, d_model)
-v = torch.rand(batch_size, seq_len, d_model)  # (batch_size, seq_len_v, d_model)
+# # Create random input tensors for query (q), key (k), and value (v)
+# q = torch.rand(batch_size, seq_len, d_model)  # (batch_size, seq_len_q, d_model)
+# k = torch.rand(batch_size, seq_len, d_model)  # (batch_size, seq_len_k, d_model)
+# v = torch.rand(batch_size, seq_len, d_model)  # (batch_size, seq_len_v, d_model)
 
-# Instantiate the MultiHeadAttention module
-multi_head_attn = MultiheadAttention(d_model=d_model, num_heads=num_heads, d_k=d_k, d_v=d_v)
+# # Instantiate the MultiHeadAttention module
+# multi_head_attn = MultiheadAttention(d_model=d_model, num_heads=num_heads)
 
-# Forward pass through the multi-head attention
-output = multi_head_attn(q, k, v)
+# # Forward pass through the multi-head attention
+# output = multi_head_attn(q, k, v)
 
-# Print the outputs
-print("Output shape:", output.shape)  # Should be (batch_size, seq_len_q, d_model)
-print("Output:", output)
+# # Print the outputs
+# print("Output shape:", output.shape)  # Should be (batch_size, seq_len_q, d_model)
+# print("Output:", output)
 
 
